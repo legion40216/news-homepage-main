@@ -317,9 +317,23 @@ margin-bottom: 10px;
     max-width: 125px;
   }
 
+  .news-row span{
+    font-size: var(--fs-700);
+  }
+
   .news-row > * {
    gap: clamp(0.2rem, 5vw, 2rem);
    align-items: center;
+  }
+
+  @media (min-width:45em) {
+    .news-row  img{
+      max-width: 90px;
+    }
+    
+    .news-row span{
+      font-size: var(--fs-600);
+    }
   }
 
   .sidemenu {
@@ -357,7 +371,7 @@ margin-bottom: 10px;
 
    @media (min-width:45em) {
   .sidemenu__news-column > *{
-   padding-bottom: 1rem;
+   padding-bottom: 2rem;
    margin-bottom: 1rem;
    border-bottom: 1px solid hsl( var(--Grayish-blue ) );
   }
