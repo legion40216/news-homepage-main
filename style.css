@@ -352,11 +352,6 @@ margin-bottom: 10px;
    flex-direction: column;
   }
 
-  .sidemenu h3{
-    color: hsl( var(--Off-white) );
-    font-weight: 700;
-  }
-
   .sidemenu__news-column{
     display: flex;
     flex-direction: column;
