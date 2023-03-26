@@ -167,7 +167,7 @@ line-height: 1.7;
  .container {
   padding-inline: var(--p-inline,1rem) ;
   margin-inline: auto;
-  max-width: 120rem;
+  max-width: 65rem;
 }
 
 .layout-padding-top{
@@ -176,7 +176,7 @@ line-height: 1.7;
 
 @media (min-width:45rem) {
   .layout-padding-top{
-    padding-block: 2rem;
+    padding-block: 3rem;
   }
 }
 
