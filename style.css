@@ -200,10 +200,6 @@ margin-bottom: 10px;
   margin-bottom: 4rem;
 }
 
-.padding-2rem{
-  padding: 1rem;
-}
-
   button[data-type="primary"]{
       display: inline-flex;
       cursor: pointer;
@@ -308,6 +304,7 @@ margin-bottom: 10px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 3rem;
+    
   }
 
   .news-row  img{
@@ -336,6 +333,7 @@ margin-bottom: 10px;
   .sidemenu {
    display: flex;
    flex-direction: column;
+   padding: 1.5rem;
   }
 
   .sidemenu__news-column{
@@ -398,7 +396,7 @@ margin-bottom: 10px;
 @media (min-width:45em) {
  .promo.grid-container{
     --gap:2rem;
-    grid-template-columns: 1fr 30%;
+    grid-template-columns: 1fr 35%;
     }
 }
 
