@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="style.css">
   <title>Frontend Mentor | News homepage</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -14,13 +14,17 @@
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 </head>
-<body>
- <header class="primary-header">
-  <div class="logo"></div>
-  <button></button>
+<body class="flow">
+ <header class="primary-header flex container">
+  <div class="logo">
+    <img src="assets/images/logo.svg" alt="">
+  </div>
+  <button class="mobile-nav-toggle" aria-controls="primary-navigation">
+    <span class="sr-only" aria-expanded="false">Menu</span>
+  </button>
   <nav>
-    <ul class="primary-navigation">
-      <li>Home</li>
+    <ul id="primary-navigation"  data-visible="false" class="primary-navigation invert-hover-effect flex">
+      <li class="active">Home</li>
       <li>New</li>
       <li>Popular</li>
       <li>Trending</li>
@@ -28,48 +32,70 @@
     </ul>
   </nav>
  </header>
- <main>
-  <div>
-    <img src="" alt="">
-    <h1>The Bright Future of Web 3.0?</h1>
+
+ <main class="container grid-container">
+
+  <div class="promo grid-container">
+  <div class="intro-section flow">
+    
+    <img src="assets/images/image-web-3-desktop.jpg" alt="">
+
+    <div class="flex flex-equal-width">
+    <h1 class="text-Very-dark-blue fs-800 fw-800">The Bright Future of Web 3.0?</h1>
     <div>
-      <p>We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
+      <p class="margin-bottom-2">We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
         But is it really fulfilling its promise?</p>
-      <button>
+      <button class="fw-800 letter-spacing-1" data-type="primary">
         Read more
       </button>
     </div>
   </div>
-   <div class="sidemenu">
-    <span>New</span>
+
+  </div>
+
+   <div class="sidemenu invert-hover-effect bg-Very-dark-blue text-Grayish-blue padding-2rem">
+    <span class="fw-800 fs-700 text-Soft-orange margin-bottom-1">New</span>
+    <div class="sidemenu__news-column ">
     <div>
-      <h3>Hydrogen VS Electric Cars</h3>
+      <h3 class="margin-bottom-10px fs-500">Hydrogen VS Electric Cars</h3>
       <p>Will hydrogen-fueled cars ever catch up to EVs?</p>
     </div>
     <div>
-      <h3>The Downsides of AI Artistry</h3>
+      <h3 class="margin-bottom-10px fs-500">The Downsides of AI Artistry</h3>
       <p>What are the possible adverse effects of on-demand AI image generation?</p>
     </div>
     <div>
-      <h3>Is VC Funding Drying Up?</h3>
+      <h3 class="margin-bottom-10px fs-500">Is VC Funding Drying Up?</h3>
       <p>Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
     </div>
    </div>
-   <div>
-    <div>
-      <span>01</span>
-      <h3>Reviving Retro PCs</h3>
-      <p>What happens when old PCs are given modern upgrades?</p>
+  </div>
+  </div>
+
+   <div class="news-row invert-hover-effect">
+    <div class="flex">
+      <img src="assets/images/image-retro-pcs.jpg" alt="">
+      <div>
+       <span class="text-Grayish-blue fw-700 fs-600">01</span>
+       <h3 class="text-Very-dark-blue fs-500 fw-800 margin-bottom-10px">Reviving Retro PCs</h3>
+       <p>What happens when old PCs are given modern upgrades?</p>
+      </div>
     </div>
-    <div>
-      <span>02</span>
-      <h3>Top 10 Laptops of 2022</h3>
-      <p>Our best picks for various needs and budgets.</p>
+    <div class="flex">
+      <img src="assets/images/image-top-laptops.jpg" alt="">
+      <div>
+        <span class="text-Grayish-blue fw-700 fs-600">02</span>
+        <h3 class="text-Very-dark-blue fs-500 fw-800 margin-bottom-10px">Top 10 Laptops of 2022</h3>
+        <p>Our best picks for various needs and budgets.</p>
+      </div>
     </div>
-    <div>
-      <span>03</span>
-      <h3>The Growth of Gaming</h3>
+    <div class="flex">
+      <img src="assets/images/image-gaming-growth.jpg" alt="">
+      <div>
+      <span class="text-Grayish-blue fw-700 fs-600">03</span>
+      <h3 class="text-Very-dark-blue fs-500 fw-800 margin-bottom-10px">The Growth of Gaming</h3>
       <p>How the pandemic has sparked fresh opportunities.</p>
+      </div>
     </div>
    </div>
  </main>
@@ -79,5 +105,23 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Suleman Lohar</a>.
   </div>
+
+  <script>
+     const nav = document.querySelector('.primary-navigation')
+     const mobileToggle = document.querySelector('.mobile-nav-toggle')
+
+     mobileToggle.addEventListener("click",()=>{
+          const visiblity = nav.getAttribute("data-visible");
+          if(visiblity === "false")
+          {
+            nav.setAttribute("data-visible",true)
+            mobileToggle.setAttribute("aria-expanded",true)
+          }
+          else{
+            nav.setAttribute("data-visible",false)
+            mobileToggle.setAttribute("aria-expanded",false)
+          }
+     })
+  </script>
 </body>
 </html>
